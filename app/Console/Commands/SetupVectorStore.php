@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Attributes\Description;
 use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Storage;
 use Laravel\Ai\Files\Document;
 use Laravel\Ai\Stores;
 
@@ -17,32 +18,35 @@ class SetupVectorStore extends Command
      */
     public function handle()
     {
-        $this->info("Creating Team2BookAI knowledge base ... ");
+        $storeId = config('ai.vector_store_id');
 
-        $store = Stores::create(
-            name: 'Team2BookAI knowledge base',
-            description: 'Team2Book AI knowledge base. Documentations and tutorials.',
-        );
-
-        $this->info("Vector Store created successfully: {$store->id}");
-
-        $documents = [
-            'docs/resources_booking_tutorial_english.md'
-        ];
-
-        $bar = $this->output->createProgressBar(count($documents));
-
-        foreach ($documents as $path) {
-            $store->add(Document::fromStorage($path));
-            $bar->advance();
+        if ($storeId) {
+            $this->info("Updating existing Vector Store: {$storeId}");
+            $store = Stores::get($storeId);
+        } else {
+            $this->info("Creating new Vector Store...");
+            $store = Stores::create(
+                name: 'Team2BookAI knowledge base',
+                description: 'Team2Book AI knowledge base. Documentations and tutorials.',
+            );
+            $this->warn("Save this store id in your .env: {$store->id}");
         }
 
-        $bar->finish();
-        $this->newline();
+        // 1. Get all files from the 'docs' directory in the 'private' storage disk
+        $documents = Storage::disk('local')->files('docs');
 
-        $this->info("All documents uploaded and indexed");
-        $this->info("Vector Store Id: {$store->id}");
-        $this->warn("Save this store id in your .env file as VECTOR_STORE_ID");
+        // 2. Loop and upload
+        foreach ($documents as $path) {
+            // Optional: Filter for specific extensions like .md or .pdf, .docx
+            if (! (str_ends_with($path, '.md') || str_ends_with($path, '.pdf') || str_ends_with($path, '.docx')) ) {
+                continue;
+            }
+
+            $this->info("Uploading: {$path}");
+            $store->add(Document::fromStorage($path, 'local'));
+        }
+
+        $this->info("Sync complete.");
 
     }
 }
