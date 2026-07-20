@@ -1,0 +1,351 @@
+1 
+00:00:07,5 --> 00:00:09,3
+Bonjour, ici Jonathan Guay
+
+2
+00:00:09,4 --> 00:00:10,4
+de Team2Book!
+
+3
+00:00:10,5 --> 00:00:12,1
+À l’aide de ce tutoriel vidéo,
+
+4
+00:00:12,2 --> 00:00:13,1
+je vais vous montrer à utiliser 
+
+5
+00:00:13,2 --> 00:00:15,1
+la fonction « En équipe avec ».
+
+6
+00:00:15,2 --> 00:00:16,1
+Plusieurs organisations 
+
+7
+00:00:16,2 --> 00:00:17,4
+travaillent en petits groupes.  
+
+8
+00:00:17,5 --> 00:00:20,1
+Par exemple, une clinique médicale pourrait avoir 
+
+9
+00:00:20,2 --> 00:00:22,1
+des assistants ou des infirmières auxiliaires 
+
+10
+00:00:22,2 --> 00:00:25,1
+travaillant avec 1 ou plusieurs médecins
+
+11
+00:00:25,2 --> 00:00:26,1
+au cours de la journée 
+
+12
+00:00:26,2 --> 00:00:27,1
+ou au cours d’une demi-journée.
+
+13
+00:00:27,2 --> 00:00:29,1
+Saviez-vous qu’il existe plusieurs moyens
+
+14
+00:00:29,2 --> 00:00:31,1
+d’organiser votre calendrier partagé ? 
+
+15
+00:00:31,2 --> 00:00:34,1
+- Vous pourriez activer et renseigner le « Champ de description »  
+
+16
+00:00:34,2 --> 00:00:36,1
+mis à votre disposition.  
+
+17
+00:00:36,2 --> 00:00:40,1
+- Vous pourriez également utiliser la fonction « Événements liés ».  
+
+18
+00:00:40,2 --> 00:00:42,1
+Voyez le tutoriel texte à l’adresse suivante : 
+
+19
+00:00:42,2 --> 00:00:45,1
+- Enfin, vous pourriez utiliser la fonction « En équipe avec » 
+
+20
+00:00:45,2 --> 00:00:47,1
+décrite dans le présent tutoriel. 
+
+21
+00:00:47,2 --> 00:00:48,1
+Étape préparatoire
+
+22
+00:00:48,2 --> 00:00:51,1
+Pour utiliser la fonction « En équipe avec »,   
+
+23
+00:00:51,2 --> 00:00:52,1
+votre gestionnaire d’équipe doit activer 
+
+24
+00:00:52,2 --> 00:00:54,1
+cette fonction dans les paramètres. 
+
+25
+00:00:54,2 --> 00:00:55,1
+Pour ce faire, 
+
+26
+00:00:55,2 --> 00:00:57,1
+choisissez l’onglet « Consommateurs » 
+
+27
+00:00:57,2 --> 00:00:59,1
+de la section « Paramètres » 
+
+28
+00:00:59,2 --> 00:01:00,1
+de votre « Tableau de bord » Team2Book.
+
+29
+00:01:00,2 --> 00:01:06,1
+Repérez le titre « En équipe avec ».  Activez et sauvegardez.
+
+30
+00:01:06,2 --> 00:01:09,1
+Vous pourrez ensuite ajouter ou retirer des consommateurs
+
+31
+00:01:09,2 --> 00:01:11,1
+(c’est-à-dire les professionnels ou des employés)
+
+32
+00:01:11,2 --> 00:01:14,1
+pouvant travailler en petits groupes.
+
+33
+00:01:14,2 --> 00:01:15,1
+Si l’on prend l’exemple d’une clinique médicale, 
+
+34
+00:01:15,2 --> 00:01:18,1
+ajouter tous les médecins qu’un assistant peut aider. 
+
+35
+00:01:18,2 --> 00:01:20,1
+Pensez également à ajouter
+
+36
+00:01:20,2 --> 00:01:22,1
+le nom de vos assistants à cette liste
+
+37
+00:01:22,2 --> 00:01:26,1
+afin que les personnes assistées puissent voir qui les assiste. 
+
+38
+00:01:26,2 --> 00:01:27,1
+N’oubliez pas de sauvegarder.
+
+39
+00:01:27,2 --> 00:01:29,1
+Au besoin, n’hésitez pas à mettre à jour
+
+40
+00:01:29,2 --> 00:01:31,1
+la liste des consommateurs
+
+41
+00:01:31,2 --> 00:01:33,1
+ici ou dans la fenêtre de mise à jour des consommateurs.
+
+42
+00:01:33,2 --> 00:01:34,1
+En effet,
+
+43
+00:01:34,2 --> 00:01:37,1
+une fois la fonction « En équipe avec » activée,
+
+44
+00:01:37,2 --> 00:01:38,1
+un nouveau paramètre s’affiche 
+
+45
+00:01:38,2 --> 00:01:41,1
+dans la fenêtre des mises à jour ou d’ajout d’un consommateur.
+
+46
+00:01:41,2 --> 00:01:42,1
+Ce paramètre s’intitule 
+
+47
+00:01:42,2 --> 00:01:44,1
+« peut être pairé à une équipe ».
+
+48
+00:01:44,2 --> 00:01:46,1
+Voyons maintenant comment 
+
+49
+00:01:46,2 --> 00:01:48,1
+ajouter un événement en utilisant cette fonction.
+
+50
+00:01:48,2 --> 00:01:49,1
+À partir de votre calendrier Teamup, ajouter
+
+51
+00:01:49,2 --> 00:01:53,1
+un événement de disponibilité pour votre consommateur.
+
+52
+00:01:53,2 --> 00:01:54,1
+Dans notre exemple,
+
+53
+00:01:54,2 --> 00:01:56,1
+nous allons utiliser l’assistant Martin Picard.
+
+54
+00:01:56,2 --> 00:01:58,1
+Renseignez le champ « En équipe avec »
+
+54
+00:01:58,2 --> 00:02:01,1
+en y insérant le nom de tous les médecins
+
+55
+00:02:01,2 --> 00:02:03,1
+que Martin Picard va assister cette journée-là.
+
+56
+00:02:03,2 --> 00:02:04,1
+Dans notre exemple,
+
+57
+00:02:04,2 --> 00:02:07,1
+nous allons insérer le nom de Dre Tremblay et Dre Gagnon.
+
+58
+00:02:07,2 --> 00:2:10,1
+Voilà! À la prochaine mise à jour du planificateur, 
+
+59
+00:02:10,1 --> 00:02:14,1
+vous verrez un événement de ressource pour l’assistant 
+
+60
+00:02:14,2 --> 00:02:17,1
+Martin Picard. Le champ « En équipe avec » contiendra
+
+61
+00:02:17,2 --> 00:02:19,1
+les noms de Dre Tremblay et Dre Gagnon.
+
+62
+00:02:19,2 --> 00:02:22,1
+De même, Dre Tremblay ou Dre Gagnon
+
+63
+00:02:22,2 --> 00:02:24,1
+peut savoir qui sera leur assistant cette journée-là
+
+64
+00:02:24,2 --> 00:02:26,1
+puisque l’événement de ressource
+
+65
+00:02:26,2 --> 00:02:28,1
+c'est-à-dire l'attribution de bureau
+
+66
+00:02:28,2 --> 00:02:30,1
+qui a été créé pour eux contiendra le champ 
+
+67
+00:02:30,2 --> 00:02:34,1
+« En équipe avec » avec le nom de l’assistant Martin Picard.
+
+68
+00:02:34,2 --> 00:02:37,1
+Notez également que l’information sera inscrite 
+
+69
+00:02:37,2 --> 00:02:40,1
+dans le sous-calendrier de présence de l’équipe 
+
+70
+00:02:40,2 --> 00:02:41,1
+si vous avez activé cette fonction.
+
+71
+00:02:44,2 --> 00:02:49,1
+Vous devez également savoir tous les événements 
+
+72
+00:02:49,2 --> 00:02:51,1
+de disponibilités avec le champ « En équipe avec » renseigné 
+
+73
+00:02:51,2 --> 00:02:55,1
+sont considérés par Team2Book comme des événements
+
+74
+00:02:55,2 --> 00:02:59,1
+de disponibilités, peu importe le type de sous-calendrier
+
+75
+00:02:59,2 --> 00:03:01,1
+du consommateur. Les spectateurs (par exemple  
+
+76
+00:03:01,2 --> 00:03:03,1
+vos réceptionnistes) peuvent maintenant vérifier qui  
+
+77
+00:03:03,2 --> 00:03:04,1
+travaille en petits groupes de plusieurs manières.
+
+78
+00:03:04,2 --> 00:03:06,1
+Ils peuvent par exemple 
+
+79
+00:03:06,2 --> 00:03:08,1
+survoler un événement à l’aide de leur souris, 
+
+80
+00:03:08,2 --> 00:03:11,1
+et le champ « En équipe avec » sera renseigné.
+
+81
+00:03:11,2 --> 00:03:14,1
+De plus, ils peuvent également afficher la vue 
+
+82
+00:03:14,2 --> 00:03:17,1
+« Tableau » de Teamup et s’assurer que la colonne 
+
+83
+00:03:17,2 --> 00:03:19,1
+« En Équipe Avec » est activée.
+
+84
+00:03:21,2 --> 00:03:23,1
+Nous espérons que ce tutoriel vous a plu.
+
+85
+00:03:23,2 --> 00:03:25,1
+Le travail en petits groupes, 
+
+86
+00:03:25,2 --> 00:03:27,1
+un autre avantage de Team2Book!
+
+87
+00:03:27,2 --> 00:03:28,1
+Merci!

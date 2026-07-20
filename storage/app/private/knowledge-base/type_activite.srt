@@ -1,0 +1,375 @@
+1 
+00:00:07,5 --> 00:00:09,7
+Bonjour, ici Jonathan Guay
+
+2
+00:00:09,8 --> 00:00:10,9
+de Team2Book!
+
+3
+00:00:11,1 --> 00:00:13,1
+Est-ce qu’il serait utile pour votre équipe 
+
+4
+00:00:13,2 --> 00:00:14,1
+que les consommateurs indiquent
+
+5
+00:00:14,2 --> 00:00:16,1
+non seulement leurs disponibilités,
+
+6
+00:00:16,2 --> 00:00:18,1
+mais indiquent également 
+
+7
+00:00:18,2 --> 00:00:19,4
+leur type d’activité?
+
+8
+00:00:19,5 --> 00:00:21,1
+Supposons par exemple une clinique médicale
+
+9
+00:00:21,2 --> 00:00:23,1
+dont les médecins peuvent voir
+
+10
+00:00:23,2 --> 00:00:25,1
+un certain nombre de patients à l'heure
+
+11
+00:00:25,2 --> 00:00:27,1
+en fonction du type d’activité.
+
+12
+00:00:27,2 --> 00:00:29,1
+Cette clinique pourrait vouloir attribuer 
+
+13
+00:00:29,2 --> 00:00:31,1
+des assistants cliniques ou des infirmières auxiliaires
+
+14
+00:00:31,2 --> 00:00:33,1
+pour assister les médecins.
+
+15
+00:00:33,2 --> 00:00:35,1
+Vous pourriez donc indiquer le débit 
+
+16
+00:00:35,2 --> 00:00:37,1
+(c’est-à-dire le nombre de patients à l'heure)
+
+17
+00:00:37,2 --> 00:00:39,1
+pour chacun des médecins
+
+18
+00:00:39,2 --> 00:00:40,1
+en fonction du type d’activité.
+
+19
+00:00:40,2 --> 00:00:42,1
+Voyez notre tutoriel vidéo intitulé
+
+20
+00:00:42,2 --> 00:00:45,1
+« Consommateurs - Informations supplémentaires ».
+
+21
+00:00:45,2 --> 00:00:47,1
+Les consommateurs pourraient indiquer
+
+22
+00:00:47,2 --> 00:00:48,1
+le type activité 
+
+23
+00:00:48,2 --> 00:00:50,1
+qu'ils comptent effectuer une journée donnée.
+
+24
+00:00:50,2 --> 00:00:53,1
+Grâce au débit et au type d’activité,
+
+25
+00:00:53,2 --> 00:00:55,1
+vous aurez maintenant toute l’information nécessaire
+
+26
+00:00:55,2 --> 00:00:57,1
+pour attribuer vos assistants cliniques
+
+27
+00:00:57,2 --> 00:00:59,1
+à chacun des médecins.
+
+28
+00:00:59,2 --> 00:01:00,1
+Étape préparatoire
+
+29
+00:01:00,2 --> 00:01:02,1
+Votre gestionnaire d’équipe doit activer 
+
+30
+00:01:02,2 --> 00:01:04,1
+la fonction « Type d’activité » 
+
+31
+00:01:04,2 --> 00:01:05,1
+à partir des paramètres
+
+32
+00:01:05,2 --> 00:01:07,1
+de votre tableau de bord Team2Book.
+
+33
+00:01:07,2 --> 00:01:08,1
+Pour ce faire, 
+
+34
+00:01:08,2 --> 00:01:11,1
+choisissez l’onglet « Champs personnalisés » 
+
+35
+00:01:11,2 --> 00:01:13,1
+de la section « Paramètres » 
+
+36
+00:01:13,2 --> 00:01:15,1
+de votre « Tableau de bord » Team2Book.  
+
+37
+00:01:15,2 --> 00:01:17,1
+Repérez le titre « Type d’activité ».
+
+38
+00:01:17,2 --> 00:01:19,1
+Activez et sauvegardez.
+
+39
+00:01:19,2 --> 00:01:21,1
+Vous aurez ensuite l’occasion
+
+40
+00:01:21,2 --> 00:01:23,1
+de renommer le champ « Type d’activité » 
+
+41
+00:01:23,2 --> 00:01:24,1
+selon vos besoins.
+
+42
+00:01:24,2 --> 00:01:25,1
+Dans l’exemple suivant,
+
+43
+00:01:25,2 --> 00:01:27,1
+nous avons conservé le nom « Type d’activité ».
+
+44
+00:01:27,2 --> 00:01:28,1
+Finalement,
+
+45
+00:01:28,2 --> 00:01:31,1
+nous pouvons insérer toutes les options possibles 
+
+46
+00:01:31,2 --> 00:01:34,1
+pour ce champ et y attribuer une couleur.  
+
+47
+00:01:34,2 --> 00:01:36,1
+Supposons que nous ayons une clinique médicale 
+
+48
+00:01:36,2 --> 00:01:39,1
+dont les professionnels effectuent généralement 
+
+49
+00:01:39,2 --> 00:01:40,1
+2 types d’activité.
+
+50
+00:01:40,2 --> 00:01:42,1
+Soit des suivis de grossesse 
+
+51
+00:01:42,2 --> 00:01:43,1
+soit des suivis réguliers.
+
+52
+00:01:43,2 --> 00:01:46,1
+Nous allons donc ajouter les 2 types d'activité suivants :
+
+53
+00:01:46,2 --> 00:01:48,1
+Grossesse et Régulier.
+
+54
+00:01:48,2 --> 00:01:49,1
+N’oubliez pas de sauvegarder vos changements.
+
+55
+00:01:49,2 --> 00:01:51,1
+Voyons maintenant les changements dans Teamup.
+
+56
+00:01:51,2 --> 00:01:54,1
+Lorsque les consommateurs entreront leurs disponibilités,
+
+57
+00:01:54,2 --> 00:01:56,1
+ils pourront maintenant renseigner
+
+58
+00:01:56,2 --> 00:01:58,1
+le nouveau champ « Type d’activité ».
+
+59
+00:01:58,2 --> 00:02:00,1
+Lorsque Team2Book créera un événement de ressource,
+
+60
+00:02:00,2 --> 00:02:04,1
+il renseignera automatiquement le champ Type d’activité 
+
+61
+00:02:04,2 --> 00:2:07,1
+avec l’activité choisie par le consommateur.
+
+62
+00:02:07,2 --> 00:02:09,1
+Les gestionnaires d’équipe pourront maintenant voir
+
+63
+00:02:09,2 --> 00:02:10,1
+le type d’activité 
+
+64
+00:02:10,2 --> 00:02:12,1
+effectué par chacun des consommateurs.  
+
+65
+00:02:12,2 --> 00:02:13,1
+Soit en pointant leur souris 
+
+66
+00:02:13,2 --> 00:02:15,1
+sur un événement de ressource
+
+67
+00:02:15,2 --> 00:02:18,1
+soit à l'aide de la vue de Tableau de Teamup.
+
+68
+00:02:18,2 --> 00:02:20,1
+Voyons maintenant un exemple
+
+69
+00:02:20,2 --> 00:02:22,1
+où nous avons à la fois activé
+
+70
+00:02:22,2 --> 00:02:25,1
+la fonction « Consommateurs - Informations supplémentaires »
+
+71
+00:02:25,2 --> 00:02:27,1
+pour indiquer le débit de chaque consommateur
+
+72
+00:02:27,2 --> 00:02:29,1
+et la fonction « type d’activité ».
+
+73
+00:02:29,2 --> 00:02:31,1
+On peut voir que le 17 février,
+
+74
+00:02:31,2 --> 00:02:33,1
+le consommateur B. Thibeault
+
+75
+00:02:33,2 --> 00:02:35,1
+effectue un suivi de grossesse.
+
+76
+00:02:35,2 --> 00:02:38,1
+Nous pouvons également voir que le débit
+
+77
+00:02:38,2 --> 00:02:41,1
+de B. Thibeault pour un suivi de grossesse
+
+78
+00:02:41,2 --> 00:02:42,1
+est de 4 patients à l’heure.
+
+79
+00:02:42,2 --> 00:02:44,1
+La combinaison de ces 2 informations
+
+80
+00:02:44,2 --> 00:02:45,1
+permet au gestionnaire d’équipe
+
+81
+00:02:45,2 --> 00:02:49,1
+d'attribuer le bon assistant clinique à B. Thibeault.
+
+82
+00:02:49,2 --> 00:02:52,1
+Voyez notre tutoriel vidéo intitulé « En équipe avec » 
+
+83
+00:02:52,2 --> 00:02:54,1
+pour plus d'informations.  
+
+84
+00:02:54,2 --> 00:02:56,1
+Veuillez noter que lorsque le champ
+
+85
+00:02:56,2 --> 00:02:58,1
+« Type d’activité » est renseigné 
+
+86
+00:02:58,2 --> 00:03:00,1
+Team2Book considèrera l'événement 
+
+87
+00:03:00,2 --> 00:03:02,1
+comme un événement de disponibilité
+
+88
+00:03:02,2 --> 00:03:04,1
+et ce peu importe le type 
+
+89
+00:03:04,2 --> 00:03:06,1
+de sous-calendrier du consommateur.
+
+90
+00:03:06,2 --> 00:03:07,1
+Voilà!
+
+91
+00:03:07,2 --> 00:03:08,1
+Nous espérons que ce tutoriel vous a plu.
+
+92
+00:03:08,2 --> 00:03:10,1
+Le choix du type d’activité,
+
+93
+00:03:10,2 --> 00:03:12,1
+un autre avantage de Team2Book!
+
+94
+00:03:12,2 --> 00:03:13,1
+Merci!

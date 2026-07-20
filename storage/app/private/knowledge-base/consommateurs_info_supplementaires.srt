@@ -1,0 +1,307 @@
+1 
+00:00:07,5 --> 00:00:09,3
+Bonjour, ici Jonathan Guay
+
+2
+00:00:09,4 --> 00:00:10,4
+de Team2Book!
+
+3
+00:00:10,5 --> 00:00:12,1
+Vous aimeriez caractériser
+
+4
+00:00:12,2 --> 00:00:13,1
+chacun de vos consommateurs? 
+
+5
+00:00:13,2 --> 00:00:15,1
+C’est maintenant possible!
+
+6
+00:00:15,2 --> 00:00:16,1
+Par exemple,
+
+7
+00:00:16,2 --> 00:00:17,4
+une clinique médicale voudra peut-être 
+
+8
+00:00:17,5 --> 00:00:19,1
+indiquer le débit de chaque professionnel.
+
+9
+00:00:19,2 --> 00:00:22,1
+C’est-à-dire le nombre de patients par heure
+
+10
+00:00:22,2 --> 00:00:24,1
+rencontré par chaque professionnel
+
+11
+00:00:24,2 --> 00:00:26,1
+en fonction du type d’activité. 
+
+12
+00:00:26,2 --> 00:00:28,1
+Cette information peut aider
+
+13
+00:00:28,2 --> 00:00:30,1
+certaines cliniques à attribuer le bon
+
+14
+00:00:30,2 --> 00:00:33,1
+assistant clinique ou infirmière auxiliaire
+
+15
+00:00:33,2 --> 00:00:34,1
+à chaque professionnel.
+
+16
+00:00:34,2 --> 00:00:36,1
+Étape préparatoire 
+
+17
+00:00:36,2 --> 00:00:38,1
+Votre gestionnaire d’équipe doit activer
+
+18
+00:00:38,2 --> 00:00:42,1
+la fonction « Consommateurs : Info supplémentaires »
+
+19
+00:00:42,2 --> 00:00:45,1
+à partir des paramètres du tableau de bord de Team2Book.
+
+20
+00:00:45,2 --> 00:00:48,1
+Pour ce faire, choisissez l’onglet « Consommateurs » 
+
+21
+00:00:48,2 --> 00:00:50,1
+de la section « Paramètres »
+
+22
+00:00:50,2 --> 00:00:52,1
+de votre « Tableau de bord » Team2Book.
+
+23
+00:00:52,2 --> 00:00:56,1
+Repérez le titre « Consommateurs : Info supplémentaires ». 
+
+24
+00:00:56,2 --> 00:00:57,1
+Activez et sauvegardez.
+
+25
+00:00:57,2 --> 00:00:59,1
+Il aura ensuite l’occasion de nommer
+
+26
+00:00:59,2 --> 00:01:03,1
+le champ « Info supplémentaire » selon vos besoins.
+
+27
+00:01:03,2 --> 00:01:04,1
+Dans l’exemple suivant, 
+
+28
+00:01:04,2 --> 00:01:06,1
+nous avons nommé ce champ « débit ».
+
+29
+00:01:06,2 --> 00:01:08,1
+Finalement, nous pouvons ajouter
+
+30
+00:01:08,2 --> 00:01:10,1
+toutes les options possibles pour ce champ.
+
+31
+00:01:10,2 --> 00:01:12,1
+Par exemple, les professionnels pourront voir
+
+32
+00:01:12,2 --> 00:01:16,1
+de 3 à 6 patients à l’heure pour un suivi de grossesse.
+
+33
+00:01:16,2 --> 00:01:19,1
+De même certains professionnels verront
+
+34
+00:01:19,2 --> 00:01:23,1
+de 3 à 6 patients à heures pour des suivis réguliers.
+
+35
+00:01:23,2 --> 00:01:25,1
+Nous allons donc ajouter les options : 
+
+36
+00:01:25,2 --> 00:01:27,1
+Grossesse3 Grossesse4 Grossesse5 Grossesse6
+
+37
+00:01:27,2 --> 00:01:30,1
+et Régulier3 Régulier4 Régulier5 Régulier6
+
+38
+00:01:30,2 --> 00:01:31,1
+Vous pouvez également ajouter
+
+39
+00:01:31,2 --> 00:01:32,1
+les couleurs des options.
+
+40
+00:01:32,2 --> 00:01:34,1
+Par exemple, pour les options
+
+41
+00:01:34,2 --> 00:01:36,1
+de suivi de grossesse jaunes 
+
+42
+00:01:36,2 --> 00:01:39,1
+et pour les options de suivi régulier bleues.
+
+43
+00:01:39,2 --> 00:01:41,1
+N’oubliez pas de sauvegarder vos changements.
+
+44
+00:01:41,2 --> 00:01:44,1
+Maintenant, allons mettre à jour chaque consommateur
+
+45
+00:01:44,2 --> 00:01:45,1
+pour indiquer son débit
+
+46
+00:01:45,2 --> 00:01:49,1
+dans le nouveau champ ‘Info supplémentaires (débit)’.
+
+47
+00:01:49,2 --> 00:01:50,1
+Pour ce faire, rendez-vous à la section
+
+48
+00:01:50,2 --> 00:01:54,1
+« Consommateurs » de votre « Tableau de bord Team2Book » 
+
+49
+00:01:54,2 --> 00:01:56,1
+puis cliquez sur l’icône du crayon
+
+50
+00:01:56,2 --> 00:01:59,1
+ou mise à jour à côté de chaque consommateur.
+
+51
+00:01:59,2 --> 00:02:02,1
+Repérez le nouveau champ « Info supplémentaires (débit) ».
+
+52
+00:02:02,2 --> 00:02:04,1
+Ajoutez-y une option ou plusieurs options.
+
+53
+00:02:04,2 --> 00:02:07,1
+Par exemple, « Grossesse4 » et « Régulier5 »
+
+54
+00:02:07,2 --> 00:02:09,1
+et soumettez vos changements.
+
+55
+00:02:09,2 --> 00:02:11,1
+Voyons maintenant les changements dans Teamup.
+
+56
+00:02:11,2 --> 00:02:14,1
+Lorsqu’un consommateur ajoute une disponibilité,
+
+57
+00:02:14,2 --> 00:02:16,1
+Team2Book tente d’attribuer une ressource
+
+58
+00:02:16,2 --> 00:02:17,1
+à ce consommateur.
+
+59
+00:02:17,2 --> 00:02:20,1
+Team2Book créera un événement de ressource.
+
+60
+00:02:20,2 --> 00:02:23,1
+La différence est que le champ Info supplémentaires 
+
+61
+00:02:23,2 --> 00:2:26,1
+« Débit » sera automatiquement renseigné
+
+62
+00:02:26,2 --> 00:02:28,1
+avec les débits de ce consommateur.
+
+63
+00:02:28,2 --> 00:02:31,1
+Vous voyez à l’écran le champ « Débit » renseigné
+
+64
+00:02:31,2 --> 00:02:32,1
+pour l’événement de ressource
+
+65
+00:02:32,2 --> 00:02:35,1
+créé pour le consommateur B.Thibeault.
+
+66
+00:02:35,2 --> 00:02:37,1
+Vous pouvez voir la même information
+
+67
+00:02:37,2 --> 00:02:39,1
+dans la vue "Tableau" de Teamup.
+
+68
+00:02:39,2 --> 00:02:40,1
+Grâce à cette information,
+
+69
+00:02:40,2 --> 00:02:42,1
+cette clinique pourra attribuer
+
+70
+00:02:42,2 --> 00:02:45,1
+un assistant clinique au consommateur B.Thibeault
+
+71
+00:02:45,2 --> 00:02:46,1
+en fonction de son débit.
+
+72
+00:02:46,2 --> 00:02:49,1
+Voyez notre tutoriel « En équipe avec » 
+
+73
+00:02:49,2 --> 00:02:50,1
+pour plus de détails.
+
+74
+00:02:50,2 --> 00:02:52,1
+Voilà! Nous espérons que ce tutoriel vous a plu. 
+
+75
+00:02:52,2 --> 00:02:55,1
+La caractérisation de vos consommateurs, 
+
+76
+00:02:55,2 --> 00:02:56,1
+un autre avantage de Team2Book!
+
+77
+00:02:56,2 --> 00:02:57,1
+Merci!

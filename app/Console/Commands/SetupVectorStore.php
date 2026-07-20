@@ -6,6 +6,7 @@ use Illuminate\Console\Attributes\Description;
 use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Laravel\Ai\Files\Document;
 use Laravel\Ai\Stores;
 
@@ -32,13 +33,15 @@ class SetupVectorStore extends Command
             $this->warn("Save this store id in your .env: {$store->id}");
         }
 
-        // 1. Get all files from the 'docs' directory in the 'private' storage disk
-        $documents = Storage::disk('local')->files('docs');
+        // 1. Get all files from the 'knowledge-base' directory in the 'private' storage disk
+        $documents = Storage::disk('local')->files('knowledge-base');
+
+        $acceptedExtensions = ['*.md', '*.pdf', '*.docx', '*.str', '*.doc', '*.xls', '*.xlsx', '*.ppt', '*.pptx'];
 
         // 2. Loop and upload
         foreach ($documents as $path) {
-            // Optional: Filter for specific extensions like .md or .pdf, .docx
-            if (! (str_ends_with($path, '.md') || str_ends_with($path, '.pdf') || str_ends_with($path, '.docx')) ) {
+            // Filter for specific extensions (case-insensitive)
+            if (! Str::is($acceptedExtensions, $path, true)) {
                 continue;
             }
 
