@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\VectorStoreFile;
 use Illuminate\Console\Attributes\Description;
 use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
@@ -38,6 +39,8 @@ class SetupVectorStore extends Command
 
         $acceptedExtensions = ['*.md', '*.pdf', '*.docx', '*.str', '*.doc', '*.xls', '*.xlsx', '*.ppt', '*.pptx'];
 
+        $bar = $this->output->createProgressBar(count($documents));
+
         // 2. Loop and upload
         foreach ($documents as $path) {
             // Filter for specific extensions (case-insensitive)
@@ -46,8 +49,21 @@ class SetupVectorStore extends Command
             }
 
             $this->info("Uploading: {$path}");
+
+            if (VectorStoreFile::where('file_path', $path)->exists()) {
+                $this->info("Skipping already added file: {$path}");
+                $bar->advance();
+                continue;
+            }
+
             $store->add(Document::fromStorage($path, 'local'));
+
+            VectorStoreFile::create(['file_path' => $path]);
+
+            $bar->advance();
         }
+
+        $bar->finish();
 
         $this->info("Sync complete.");
 
