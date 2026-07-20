@@ -8,8 +8,10 @@ use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Laravel\Ai\Exceptions\RateLimitedException;
 use Laravel\Ai\Files\Document;
 use Laravel\Ai\Stores;
+use Throwable;
 
 #[Signature('app:setup-vector-store')]
 #[Description('Create knowledge base from documentations.')]
@@ -56,7 +58,26 @@ class SetupVectorStore extends Command
                 continue;
             }
 
-            $store->add(Document::fromStorage($path, 'local'));
+            $maxRetries = 3;
+            $retryCount = 0;
+            $success = false;
+
+            while (! $success && $retryCount < $maxRetries) {
+                try {
+                    $store->add(Document::fromStorage($path, 'local'));
+                    $success = true;
+                } catch (RateLimitedException|Throwable $e) {
+                    $retryCount++;
+                    if ($retryCount >= $maxRetries) {
+                        $this->error("\nFailed to upload {$path} after {$maxRetries} attempts: {$e->getMessage()}");
+                        throw $e;
+                    }
+
+                    $waitSeconds = 60;
+                    $this->warn("\nRate limit or timeout hit. Waiting {$waitSeconds} seconds before retry #{$retryCount}...");
+                    sleep($waitSeconds);
+                }
+            }
 
             VectorStoreFile::create(['file_path' => $path]);
 
