@@ -32,16 +32,6 @@ class Team2BookAgent implements Agent, Conversational, HasTools
     }
 
     /**
-     * Get the list of messages comprising the conversation so far.
-     *
-     * @return Message[]
-     */
-    public function messages(): iterable
-    {
-        return [];
-    }
-
-    /**
      * Get the tools available to the agent.
      *
      * @return Tool[]

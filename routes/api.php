@@ -9,5 +9,6 @@ Route::post('/login', [AuthController::class, 'login']);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/prompt', [AiController::class, 'prompt']);
+    Route::get('/conversations', [AiController::class, 'conversations']);
     Route::post('/logout', [AuthController::class, 'logout']);
 });
