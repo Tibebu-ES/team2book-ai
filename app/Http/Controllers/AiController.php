@@ -42,4 +42,30 @@ class AiController extends Controller
             $request->user()->conversations()->latest()->get()
         );
     }
+
+    /**
+     * Get a specific conversation with its messages.
+     */
+    public function showConversation(Request $request, string $id)
+    {
+        $conversation = $request->user()
+            ->conversations()
+            ->with('messages')
+            ->findOrFail($id);
+
+        return response()->json($conversation);
+    }
+
+    /**
+     * Delete a specific conversation.
+     */
+    public function destroyConversation(Request $request, string $id)
+    {
+        $request->user()
+            ->conversations()
+            ->findOrFail($id)
+            ->delete();
+
+        return response()->json(['message' => 'Conversation deleted successfully.']);
+    }
 }
