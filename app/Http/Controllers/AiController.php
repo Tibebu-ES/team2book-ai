@@ -29,6 +29,7 @@ class AiController extends Controller
 
         return response()->json([
             'answer' => (string) $response,
+            'meta' => $response->meta,
             'conversation_id' => $agent->currentConversation(),
         ]);
     }
