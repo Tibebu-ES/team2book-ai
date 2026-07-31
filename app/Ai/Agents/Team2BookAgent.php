@@ -52,6 +52,10 @@ class Team2BookAgent implements Agent, Conversational, HasTools
                 5. COMPOSING THE FINAL ANSWER:
                    - Combine facts from both sources.
                    - Prioritize local file data for product-specific guidance, and fill in gaps using the specified websites.
+
+                6. CLEAN RESPONSE FORMAT:
+                   - DO NOT include internal citation markers like "【...】", "filecite", "turnXfileY", or similar technical symbols in your final response.
+                   - Provide a clean, readable answer without technical references to the knowledge base files.
             PROMPT;
     }
 
