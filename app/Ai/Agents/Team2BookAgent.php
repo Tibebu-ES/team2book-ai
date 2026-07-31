@@ -2,8 +2,6 @@
 
 namespace App\Ai\Agents;
 
-use App\Ai\Tools\PrimaryFileSearch;
-use App\Ai\Tools\SecondaryFileSearch;
 use Laravel\Ai\Concerns\RemembersConversations;
 use Laravel\Ai\Contracts\Agent;
 use Laravel\Ai\Contracts\Conversational;
@@ -30,8 +28,8 @@ class Team2BookAgent implements Agent, Conversational, HasTools
                 CRITICAL WORKFLOW RULES:
 
                 1. INITIAL CHECK:
-                   Always use `primary_file_search` first to look for an answer.
-                   If the information is missing or incomplete in the primary results, then use `secondary_file_search`.
+                   Always use FileSearch first to look for an answer in the Primary Knowledge Base.
+                   If the information is missing or incomplete in the primary results, then use the Secondary Knowledge Base.
                    Only use `WebSearch` if both file searches fail to provide a complete answer.
 
                 2. EXACT MATCH SUFFICIENCY TEST:
@@ -68,9 +66,7 @@ class Team2BookAgent implements Agent, Conversational, HasTools
     {
         return [
 
-            //new FileSearch(stores: [config('ai.primary_vector_store_id')]),
-            new PrimaryFileSearch(stores: [config('ai.primary_vector_store_id')]),
-            new SecondaryFileSearch(stores: [config('ai.secondary_vector_store_id')]),
+            new FileSearch(stores: [config('ai.primary_vector_store_id'),config('ai.secondary_vector_store_id')]),
             (new WebSearch())->max(5)
 
 
