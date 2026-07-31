@@ -13,31 +13,31 @@ use Laravel\Ai\Files\Document;
 use Laravel\Ai\Stores;
 use Throwable;
 
-#[Signature('app:setup-vector-store')]
-#[Description('Create knowledge base from documentations.')]
-class SetupVectorStore extends Command
+#[Signature('app:secondary-kb')]
+#[Description('Create Secondary knowledge base if not created and add files.')]
+class SetupSecondaryKnowledgeBase extends Command
 {
     /**
      * Execute the console command.
      */
     public function handle()
     {
-        $storeId = config('ai.vector_store_id');
+        $storeId = config('ai.secondary_vector_store_id');
 
         if ($storeId) {
-            $this->info("Updating existing Vector Store: {$storeId}");
+            $this->info("Updating existing Secondary Knowledge Base: {$storeId}");
             $store = Stores::get($storeId);
         } else {
-            $this->info("Creating new Vector Store...");
+            $this->info("Creating new Vector Store for the Secondary Knowledge Base.");
             $store = Stores::create(
-                name: 'Team2BookAI knowledge base',
-                description: 'Team2Book AI knowledge base. Documentations and tutorials.',
+                name: 'Team2BookAI Secondary knowledge base',
+                description: 'Team2Book AI Secondary knowledge base. Files from external sources like Teamup.com ',
             );
-            $this->warn("Save this store id in your .env: {$store->id}");
+            $this->warn("Save this store id in your .env as SECONDARY_VECTOR_STORE_ID: {$store->id}");
         }
 
-        // 1. Get all files from the 'knowledge-base' directory in the 'private' storage disk
-        $documents = Storage::disk('local')->files('knowledge-base');
+        // 1. Get all files from the 'primary-knowledge-base' directory in the 'private' storage disk
+        $documents = Storage::disk('local')->files('secondary-knowledge-base');
 
         $acceptedExtensions = ['*.md', '*.pdf', '*.docx', '*.str', '*.doc', '*.xls', '*.xlsx', '*.ppt', '*.pptx'];
 

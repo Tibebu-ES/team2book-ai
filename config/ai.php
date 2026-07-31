@@ -20,7 +20,9 @@ return [
     'default_for_embeddings' => 'openai',
     'default_for_reranking' => 'cohere',
 
-    'vector_store_id' => env('VECTOR_STORE_ID'),
+    'primary_vector_store_id' => env('PRIMARY_VECTOR_STORE_ID'),
+    'secondary_vector_store_id' => env('SECONDARY_VECTOR_STORE_ID'),
+
 
     /*
     |--------------------------------------------------------------------------
