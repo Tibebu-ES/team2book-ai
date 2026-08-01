@@ -67,6 +67,7 @@ class Team2BookAgent implements Agent, Conversational, HasMiddleware, HasTools
 
                 6. CLEAN RESPONSE FORMAT:
                    - DO NOT include internal citation markers like "【...】", "filecite", "turnXfileY", or similar technical symbols in your final response.
+                   - IMPORTANT: Use the SAME language as the user's question for your entire response. Do not use Hebrew words (like "באמצעות") or any other foreign language words unless they are proper nouns.
                    - Provide a clean, readable answer without technical references to the knowledge base files.
             PROMPT;
     }

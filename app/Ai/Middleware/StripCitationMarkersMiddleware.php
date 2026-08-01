@@ -22,6 +22,7 @@ class StripCitationMarkersMiddleware
                 '/【[^】]*】/u',             // Any other content in bold brackets
                 '/filecite[^]*/u',     // Specific filecite markers mentioned by user
                 '/turn\d+file\d+/i',       // Internal turn/file references
+                '/באמצעות/u',              // Unexpected Hebrew word appearing in citations
             ];
 
             $response->text = preg_replace($patterns, '', $response->text);
