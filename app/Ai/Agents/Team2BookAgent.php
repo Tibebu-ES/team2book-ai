@@ -2,9 +2,11 @@
 
 namespace App\Ai\Agents;
 
+use App\Ai\Middleware\StripCitationMarkersMiddleware;
 use Laravel\Ai\Concerns\RemembersConversations;
 use Laravel\Ai\Contracts\Agent;
 use Laravel\Ai\Contracts\Conversational;
+use Laravel\Ai\Contracts\HasMiddleware;
 use Laravel\Ai\Contracts\HasTools;
 use Laravel\Ai\Contracts\Tool;
 use Laravel\Ai\Messages\Message;
@@ -13,9 +15,21 @@ use Laravel\Ai\Providers\Tools\FileSearch;
 use Laravel\Ai\Providers\Tools\WebSearch;
 use Stringable;
 
-class Team2BookAgent implements Agent, Conversational, HasTools
+class Team2BookAgent implements Agent, Conversational, HasMiddleware, HasTools
 {
     use Promptable, RemembersConversations;
+
+    /**
+     * Get the agent's prompt middleware.
+     *
+     * @return array
+     */
+    public function middleware(): array
+    {
+        return [
+            new StripCitationMarkersMiddleware,
+        ];
+    }
 
     /**
      * Get the instructions that the agent should follow.
