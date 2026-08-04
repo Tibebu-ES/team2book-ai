@@ -61,10 +61,12 @@ class SetupPrimaryKnowledgeBase extends Command
             $maxRetries = 3;
             $retryCount = 0;
             $success = false;
+            $providerFileId = null;
 
             while (! $success && $retryCount < $maxRetries) {
                 try {
-                    $store->add(Document::fromStorage($path, 'local'));
+                    $response = $store->add(Document::fromStorage($path, 'local'));
+                    $providerFileId = $response->id();
                     $success = true;
                 } catch (RateLimitedException|Throwable $e) {
                     $retryCount++;
@@ -79,12 +81,34 @@ class SetupPrimaryKnowledgeBase extends Command
                 }
             }
 
-            VectorStoreFile::create(['file_path' => $path,'type' => 'primary']);
+            VectorStoreFile::create([
+                'file_path' => $path,
+                'type' => 'primary',
+                'provider_file_id' => $providerFileId,
+            ]);
 
             $bar->advance();
         }
 
         $bar->finish();
+
+        $this->newLine();
+        $this->info("Cleaning up files that are no longer in the knowledge-base directory...");
+
+        $storedFiles = VectorStoreFile::where('type', 'primary')->get();
+        foreach ($storedFiles as $storedFile) {
+            if (! in_array($storedFile->file_path, $documents)) {
+                $this->info("Removing: {$storedFile->file_path}");
+                if ($storedFile->provider_file_id) {
+                    try {
+                        $store->remove($storedFile->provider_file_id);
+                    } catch (Throwable $e) {
+                        $this->warn("Failed to remove {$storedFile->file_path} from vector store: {$e->getMessage()}");
+                    }
+                }
+                $storedFile->delete();
+            }
+        }
 
         $this->info("Sync complete.");
 
