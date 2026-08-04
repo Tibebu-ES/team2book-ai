@@ -101,7 +101,7 @@ class SetupPrimaryKnowledgeBase extends Command
                 $this->info("Removing: {$storedFile->file_path}");
                 if ($storedFile->provider_file_id) {
                     try {
-                        $store->remove($storedFile->provider_file_id);
+                        $store->remove($storedFile->provider_file_id,true);
                     } catch (Throwable $e) {
                         $this->warn("Failed to remove {$storedFile->file_path} from vector store: {$e->getMessage()}");
                     }
