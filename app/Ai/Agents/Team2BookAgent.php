@@ -82,7 +82,11 @@ class Team2BookAgent implements Agent, Conversational, HasMiddleware, HasTools
         return [
 
             new FileSearch(stores: [config('ai.primary_vector_store_id'),config('ai.secondary_vector_store_id')]),
-            (new WebSearch())->max(5)
+            (new WebSearch())->max(5)->allow([
+                'team2book.com',
+                'teamup.com',
+                '3alogic.com'
+            ])
 
 
         ];
