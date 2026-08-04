@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class VectorStoreFile extends Model
 {
-    protected $fillable = ['file_path'];
+    protected $fillable = ['file_path', 'type'];
 }

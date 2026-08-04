@@ -79,7 +79,7 @@ class SetupPrimaryKnowledgeBase extends Command
                 }
             }
 
-            VectorStoreFile::create(['file_path' => $path]);
+            VectorStoreFile::create(['file_path' => $path,'type' => 'primary']);
 
             $bar->advance();
         }
