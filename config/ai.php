@@ -23,6 +23,8 @@ return [
     'primary_vector_store_id' => env('PRIMARY_VECTOR_STORE_ID'),
     'secondary_vector_store_id' => env('SECONDARY_VECTOR_STORE_ID'),
 
+    'team2book_api_base_url' => env('TEAM2BOOK_API_BASE_URL', 'https://team2book.com/webapp/public/api/v1/ai/'),
+
 
     /*
     |--------------------------------------------------------------------------

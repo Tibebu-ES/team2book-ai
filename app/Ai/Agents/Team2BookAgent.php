@@ -3,6 +3,7 @@
 namespace App\Ai\Agents;
 
 use App\Ai\Middleware\StripCitationMarkersMiddleware;
+use App\Ai\Tools\ScheduleSearch;
 use Laravel\Ai\Concerns\RemembersConversations;
 use Laravel\Ai\Contracts\Agent;
 use Laravel\Ai\Contracts\Conversational;
@@ -37,14 +38,15 @@ class Team2BookAgent implements Agent, Conversational, HasMiddleware, HasTools
     public function instructions(): Stringable|string
     {
         return <<<'PROMPT'
-                You are a customer support agent. You have access to primaryFileSearch, SecondaryFileSearch and WebSearch tools.
+                You are a customer support agent. You have access to primaryFileSearch, SecondaryFileSearch, ScheduleSearch, and WebSearch tools.
 
                 CRITICAL WORKFLOW RULES:
 
                 1. INITIAL CHECK:
-                   Always use FileSearch first to look for an answer in the Primary Knowledge Base.
-                   If the information is missing or incomplete in the primary results, then use the Secondary Knowledge Base.
-                   Only use `WebSearch` if both file searches fail to provide a complete answer.
+                   - For scheduling questions (e.g., "Where is Doctor X today?", "Who are working today?", "When is Doctor X working in September?", "Who is the assistant of Doctor X?"), use the `ScheduleSearch` tool.
+                   - For all other inquiries, always use FileSearch first to look for an answer in the Primary Knowledge Base.
+                   - If the information is missing or incomplete in the primary results, then use the Secondary Knowledge Base.
+                   - Only use `WebSearch` if both file searches (or ScheduleSearch) fail to provide a complete answer.
 
                 2. EXACT MATCH SUFFICIENCY TEST:
                    Before outputting an answer, evaluate if the FileSearch results explicitly answer the key entity/feature requested by the user.
@@ -80,7 +82,7 @@ class Team2BookAgent implements Agent, Conversational, HasMiddleware, HasTools
     public function tools(): iterable
     {
         return [
-
+            new ScheduleSearch(),
             new FileSearch(stores: [config('ai.primary_vector_store_id'),config('ai.secondary_vector_store_id')]),
             (new WebSearch())->max(5)->allow([
                 'team2book.com',
