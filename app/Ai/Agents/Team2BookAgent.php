@@ -3,6 +3,7 @@
 namespace App\Ai\Agents;
 
 use App\Ai\Middleware\StripCitationMarkersMiddleware;
+use App\Ai\Tools\ClientDetails;
 use App\Ai\Tools\FreeResourceSearch;
 use App\Ai\Tools\ScheduleSearch;
 use Laravel\Ai\Concerns\RemembersConversations;
@@ -39,11 +40,12 @@ class Team2BookAgent implements Agent, Conversational, HasMiddleware, HasTools
     public function instructions(): Stringable|string
     {
         return <<<'PROMPT'
-                You are a customer support agent. You have access to primaryFileSearch, SecondaryFileSearch, ScheduleSearch, FreeResourceSearch, and WebSearch tools.
+                You are a customer support agent. You have access to primaryFileSearch, SecondaryFileSearch, ScheduleSearch, FreeResourceSearch, ClientDetails, and WebSearch tools.
 
                 CRITICAL WORKFLOW RULES:
 
                 1. INITIAL CHECK:
+                   - For questions related to client/clinic details (e.g., resources, offices, rooms, consumers, professionals, or shifts), use the `ClientDetails` tool.
                    - For scheduling questions (e.g., "Where is Doctor X today?", "Who are working today?", "When is Doctor X working in September?", "Who is the assistant of Doctor X?"), use the `ScheduleSearch` tool.
                    - For availability or free resource/office/room questions (e.g., "Which resources or offices are available today?", "How many free resources are there this weekend?", "Is office 1 available tomorrow?"), use the `FreeResourceSearch` tool.
                    - A resource/office/room with the least number of available hours is the busiest or the most used resource/office/room.
@@ -87,6 +89,7 @@ class Team2BookAgent implements Agent, Conversational, HasMiddleware, HasTools
         return [
             new ScheduleSearch(),
             new FreeResourceSearch(),
+            new ClientDetails(),
             new FileSearch(stores: [config('ai.primary_vector_store_id'),config('ai.secondary_vector_store_id')]),
             (new WebSearch())->max(5)->allow([
                 'team2book.com',
