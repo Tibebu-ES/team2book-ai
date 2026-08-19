@@ -3,6 +3,7 @@
 namespace App\Ai\Agents;
 
 use App\Ai\Middleware\StripCitationMarkersMiddleware;
+use App\Ai\Tools\AvailabilitySearch;
 use App\Ai\Tools\ClientDetails;
 use App\Ai\Tools\FreeResourceSearch;
 use App\Ai\Tools\ScheduleSearch;
@@ -40,7 +41,7 @@ class Team2BookAgent implements Agent, Conversational, HasMiddleware, HasTools
     public function instructions(): Stringable|string
     {
         return <<<'PROMPT'
-                You are a customer support agent. You have access to primaryFileSearch, SecondaryFileSearch, ScheduleSearch, FreeResourceSearch, ClientDetails, and WebSearch tools.
+                You are a customer support agent. You have access to primaryFileSearch, SecondaryFileSearch, ScheduleSearch, FreeResourceSearch, AvailabilitySearch, ClientDetails, and WebSearch tools.
 
                 CRITICAL WORKFLOW RULES:
 
@@ -48,6 +49,8 @@ class Team2BookAgent implements Agent, Conversational, HasMiddleware, HasTools
                    - For questions related to client/clinic details (e.g., resources, offices, rooms, consumers, professionals, or shifts), use the `ClientDetails` tool.
                    - For scheduling questions (e.g., "Where is Doctor X today?", "Who are working today?", "When is Doctor X working in September?", "Who is the assistant of Doctor X?"), use the `ScheduleSearch` tool.
                    - For availability or free resource/office/room questions (e.g., "Which resources or offices are available today?", "How many free resources are there this weekend?", "Is office 1 available tomorrow?"), use the `FreeResourceSearch` tool.
+                   - For questions about a specific consumer or professional's availability or non-availability status (e.g., "Is Dr X available today?", "Is Dr X not available this weekend?"), use the `AvailabilitySearch` tool. If the requested consumer status is not found then the consumer is not-available. If a consumer whos is in the consumers_list has no availability or non-avaialbility status on the requested date then implicitly he/she is not available.
+                   - If there are conflicting and overlapping availability and non-availability events for a consumer/professional on the requested date then give priority to the non-availability event.
                    - A resource/office/room with the least number of available hours is the busiest or the most used resource/office/room.
                    - For all other inquiries, always use FileSearch first to look for an answer in the Primary Knowledge Base.
                    - If the information is missing or incomplete in the primary results, then use the Secondary Knowledge Base.
@@ -89,6 +92,7 @@ class Team2BookAgent implements Agent, Conversational, HasMiddleware, HasTools
         return [
             new ScheduleSearch(),
             new FreeResourceSearch(),
+            new AvailabilitySearch(),
             new ClientDetails(),
             new FileSearch(stores: [config('ai.primary_vector_store_id'),config('ai.secondary_vector_store_id')]),
             (new WebSearch())->max(5)->allow([
